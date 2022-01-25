@@ -1,0 +1,31 @@
+---
+
+openwisp2_wireguard_python: python3
+openwisp2_wireguard_virtualenv_command: "virtualenv"
+
+openwisp2_wireguard_path: "/opt/wireguard-openwisp"
+openwisp2_wireguard_curl_insecure: false
+openwisp2_wireguard_controller_url: "https://{{ inventory_hostname }}"
+openwisp2_wireguard_vpn_uuid: false
+openwisp2_wireguard_vpn_key: false
+openwisp2_wireguard_flask_key: false
+openwisp2_wireguard_flask_port: 8081
+openwisp2_wireguard_flask_host: 0.0.0.0
+openwisp2_wireguard_flask_endpoint: "/trigger-update"
+
+openwisp2_wireguard_vxlan_ipv4_method: link-local
+openwisp2_wireguard_vxlan_ipv6_method: link-local
+
+openwisp2_wireguard_required_variables:
+  - openwisp2_wireguard_controller_url
+  - openwisp2_wireguard_vpn_uuid
+  - openwisp2_wireguard_vpn_key
+  - openwisp2_wireguard_flask_key
+
+openwisp2_wireguard_ssl_cert: "{{ openwisp2_wireguard_path }}/ssl/server.crt"
+openwisp2_wireguard_ssl_key: "{{ openwisp2_wireguard_path }}/ssl/server.key"
+openwisp2_wireguard_ssl_country: "US"
+openwisp2_wireguard_ssl_state: "California"
+openwisp2_wireguard_ssl_locality: "San Francisco"
+openwisp2_wireguard_ssl_organization: "IT dep."
+openwisp2_wireguard_ssl_common_name: "{{ inventory_hostname }}"
